@@ -210,6 +210,9 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- Use ESC  key to switch from terminal mode to normal mode
+vim.api.nvim_set_keymap('t', '<ESC>', [[<C-\><C-n>]], { noremap = true })
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
